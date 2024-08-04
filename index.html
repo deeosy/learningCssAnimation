@@ -15,17 +15,202 @@
       }
     }
   </script>
+  <style>
+    .sqToS{
+      height: 100px;
+      width: 100px;
+      background-color: aqua;
+      margin: 100px auto;
+      transition: all;
+      transition-duration: 0.5s;
+      transition-delay: 100ms;
+    }
+    .sqToS:hover{
+      width: 120px;
+      height: 120px;
+      margin: 100px auto;
+      margin-bottom: 80px;
+      border-top-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      background-color: aquamarine;      
+    }
+
+    .sqToC{
+      height: 100px;
+      width: 100px;
+      padding-bottom: 60px;
+      background-color: rgb(37, 111, 172);
+      margin: 0px auto;
+      transition: all;
+      transition-duration: 0.5s;
+      transition-delay: 100ms;
+      transition-timing-function: ease-in;
+    }
+    .sqToC:hover{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      rotate: 90deg;
+      background-color: rgb(76, 97, 134);      
+    }
+
+    .movingBox{
+      width: 100px;
+      height: 100px;
+      background-color: rgb(28, 28, 177);
+      position: relative;
+      /* these are the animation properties */
+      /* animation-name: square;
+      animation-duration: 4s;
+      animation-timing-function: linear;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: backwards;
+      animation-play-state: running; */
+      /* now we are gonna write them all on one line below */
+
+      animation: square 4s linear 2s infinite alternate backwards running;
+    }
+
+    @keyframes square {
+      0% {
+        background-color: rgb(28, 28, 177);
+        top: 0px;
+        left: 0px;
+      }
+      25% {
+        background-color: rgb(85, 136, 111);
+        top: 0px;
+        left: 400px;      
+      }
+      50% {
+        background-color: rgb(167, 182, 94);
+        top: 400px;
+        left: 400px;
+        border-radius: 50%;   
+      }
+      75% {
+        background-color: rgb(232, 125, 101);
+        top: 400px;
+        left: 0px;
+      }    
+      100% {
+        background-color: rgb(136, 53, 104);
+        top: 0px;
+        left: 0px;
+      }
+    }
+
+    .circle{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      width: 200px;
+      border: 20px solid red ;
+      border-radius: 50%;
+      animation: circle 2s infinite forwards;
+    }
+
+    @keyframes circle {
+      0% {border-color:red ; transform: scale(1); }
+      25% {border-color:rgb(210, 139, 31) ; transform: scale(1.1); }
+      50% {border-color:rgb(70, 185, 82) ; transform: scale(1.3); }
+      75% {border-color:rgb(97, 58, 139) ; transform: scale(1.1); }
+      100% {border-color:rgb(151, 62, 83) ; transform: scale(1); }      
+    }
+
+    .diamond{
+      height: 70px;
+      width: 70px;
+      border: 15px solid black;
+      animation: square2 2s infinite ease-in-out alternate-reverse ;
+    }
+
+    @keyframes square2 {
+      0% {rotate: 0deg; }
+      25% {border-color:rgb(130, 139, 172) ; border-width: 10px; }
+      50% {border-color:rgb(76, 112, 80) ; border-width: 20px; }
+      75% {border-color:rgb(191, 207, 87) ; border-width: 40px;}
+      100% {rotate: 360deg; border-color:rgb(102, 67, 75) ; border-width: 5px; }
+    }
+
+    .block1{
+      opacity: 1;
+      animation: blockJump 0.7s linear infinite alternate;
+    }
+
+    @keyframes blockJump {
+      0% {transform: translateY(0px);}
+      50% {transform: translatey(-10px);}
+      100% {transform: translateY(0px);}    
+    }
+    
+    .marioJump{
+      animation: marioJump 0.4s ease-in-out infinite alternate
+    }
+
+    @keyframes marioJump {
+      0% {transform: translateY(0px);}
+      50% {transform: translatey(-12px);}
+      100% {transform: translateY(0px);}    
+    }
+
+
+    .coin1{
+      animation: coinBounce 0.7s linear infinite forwards;
+    }
+
+    @keyframes coinBounce {
+      0% {transform: translateY(90px); }
+      33% {transform: translatey(-10px); transform: rotateY(0deg); opacity: 1;}
+      66% {transform: translatey(-100px); transform: rotateY(90deg); opacity: 0;}
+      100% {transform: translateY(-90px); transform: rotateY(180deg); opacity: 0;}    
+    }
+
+    
+  </style>
 
   <title>CSS Properties</title>
 </head>
 <body>
 
-  <div class="h-[100px] w-[100px] bg-red-500 my-[50px] mx-auto transition-transform hover:delay-[4s] hover:duration-[4s]  hover:h-[150px] hover:w-[150px] hover:my-[25px] hover:rounded-full hover:rotate-90"></div>
+  <div class="h-[100px] w-[100px] bg-red-500 my-[50px] mx-auto hover:transition  hover:delay-[4s] hover:duration-[4s]  hover:h-[150px] hover:w-[150px] hover:my-[25px] hover:rounded-full hover:rotate-90"></div>
+  
   
 
   <button class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
     Save Changes
   </button>
+
+  <div class="bg-blue-500 h-24 w-24 my-10 mx-auto hover:rotate-90  transition delay-150 duration-300 ease-out hover:duration-1000 hover:rounded-full"></div>
+
+  <div class="sqToS pl-[5px] pt-[30px]">Hover on Me</div>
+  <div class="sqToC pl-[5px] pt-[30px]"></div>
+  <p class="text-center mt-[30px]">Hover on Me</p>
+  <div class="m-[100px]"></div>
+
+  <div class="movingBox"></div>
+
+  <div class="circle mt-[450px] mb-[50px] mx-auto">
+    <div class="diamond"></div>
+  </div>
+
+  <div class="my-[100px] relative h-[600px] w-[100%]">
+    <div class="container">
+      <img src="./images/luigi.png" alt="" class="mario h-[200px] absolute bottom-[0px] left-[0px]">
+    </div>
+  
+    <div class="blockContainer flex justify-center items-center absolute top-[0px] left-[0px] h-[100%] w-[100%]">
+      <img src="./images/mario block.png" alt="" class="block1 w-[100px] z-20">
+      <img src="./images/mario-coin.png" alt="" class="coin1 w-[70px] z-10 relative right-[85px] bottom-[90px]">
+      <img src="./images/mario-49314.png" alt="" class="mario marioJump h-[110px] relative right-[155px] -bottom-[107px] ">
+    </div>
+  </div>
+
+
+
 
 </body>
 </html>
