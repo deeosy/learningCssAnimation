@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+
+  <title>CSS Properties</title>
+</head>
+<body>
+
+  <div class="h-[100px] w-[100px] bg-red-500 my-[50px] mx-auto transition-transform hover:delay-[4s] hover:duration-[4s]  hover:h-[150px] hover:w-[150px] hover:my-[25px] hover:rounded-full hover:rotate-90"></div>
+  
+
+  <button class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+    Save Changes
+  </button>
+
+</body>
+</html>
